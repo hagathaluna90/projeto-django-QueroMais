@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lanchonete</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'catalogo.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -21,9 +21,9 @@
             </button>
 
             <form class="search-box" action="#" method="get">
-                <input type="text" name="q" placeholder="encontre o se lanche ideal" aria-label="Buscar produtos">
+                <input type="text" name="q" placeholder="encontre o seu lanche ideal" aria-label="Buscar produtos">
                 <button type="submit" aria-label="Buscar">
-                    <img src="{% static 'img/search.png' %}" alt="">
+                    <img src="{% static 'img/lupa.png' %}" alt="">
                 </button>
             </form>
 
@@ -31,7 +31,7 @@
                 <a href="#" aria-label="Histórico">
                     <img src="{% static 'img/history.png' %}" alt="">
                 </a>
-                <a href="#" aria-label="Perfil">
+                <a href="{% url 'queromais:login' %}" aria-label="Perfil">
                     <img src="{% static 'img/user.png' %}" alt="">
                 </a>
                 <a href="#" aria-label="Sacola">
