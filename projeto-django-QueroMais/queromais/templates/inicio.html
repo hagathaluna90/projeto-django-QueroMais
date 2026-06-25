@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{% static 'inicio.css' %}">
+</head>
+<body>
+
+    <div class="circulo roxo"></div>
+    <div class="circulo verde"></div>
+    <div class="circulo azul"></div>
+    <div class="circulo rosa"></div>
+    <div class="circulo laranja"></div>
+    <div class="circulo vermelho"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Quem somos</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Horarios de atendimento</a></li>
+                <li>
+                    <a href="{% url 'queromais:login' %}" class="btn-menu">
+                        Conecte-se
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="conteudo">
+        <div class="texto">
+            <h1 class="titulo">
+                Oiê, Bem Vindos <br>
+                Podem ir entrando!
+            </h1>
+            <p>
+                Estão com fome?
+            </p>
+            <a href="{% url 'queromais:catalogo' %}" class="btn-acessar">
+                acessar
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>

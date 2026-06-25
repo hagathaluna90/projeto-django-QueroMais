@@ -1,0 +1,184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("sorvete.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(232, 105, 146, 0.45);
+    z-index: 1;
+}
+
+.container {
+    z-index: 2;
+    position: relative;
+    width: 920px;
+    height: 470px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    /* ANIMAÇÃO */
+    animation: emergir 0.8s ease;
+    transform-origin: center;
+}
+
+.fechar {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 32px;
+    color: #a569e8;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.fechar:hover {
+    transform: scale(1.2);
+    color: #e86992;
+}
+
+.lado-esquerdo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+}
+
+.lado-direito {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    border-left: 2px solid #f2f0ef;
+}
+
+
+h1 {
+    font-size: 58px;
+    color: #242424;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+
+.texto {
+    font-size: 28px;
+    color: #242424;
+    line-height: 1.5;
+}
+
+.tag {
+    background-color: #e86992;
+    color: white;
+    width: fit-content;
+    padding: 12px 24px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #d9d9d9;
+    padding: 15px 5px;
+    margin-bottom: 30px;
+    outline: none;
+    font-size: 16px;
+    color: #242424;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input:focus {
+    border-bottom: 2px solid #e86992;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    padding: 14px 35px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+
+.entrar {
+    background-color: #69c103;
+}
+
+.entrar:hover {
+    background-color: #58a102;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.inscrever {
+    background-color: #a569e8;
+}
+
+.inscrever:hover {
+    background-color: #8d4fe0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+@keyframes emergir {
+    from {
+        opacity: 0;
+        transform: scale(0.75) translateY(60px);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}

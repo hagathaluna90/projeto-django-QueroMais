@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="{% url 'queromais:inicio' %}" class="fechar">
+            ×
+        </a>
+
+        <div class="lado-esquerdo">
+            <h1>
+                Conecte-se a nós
+            </h1>
+            <p class="texto">
+                e você terá uma ótima experiência!
+            </p>
+        </div>
+
+        <div class="lado-direito">
+            <div class="tag">
+                Bem Vindos!
+            </div>
+
+            <input 
+                type="text" 
+                placeholder="Nome de usuário"
+            >
+
+            <input 
+                type="password" 
+                placeholder="Senha"
+            >
+
+            <div class="botoes">
+                <button class="entrar">
+                    Entrar
+                </button>
+                <button class="inscrever">
+                    Inscreva-se
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

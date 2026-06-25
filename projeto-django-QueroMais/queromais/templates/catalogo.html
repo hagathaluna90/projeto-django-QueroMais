@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanchonete</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container header-content">
+            <button class="menu-btn" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <form class="search-box" action="#" method="get">
+                <input type="text" name="q" placeholder="encontre o se lanche ideal" aria-label="Buscar produtos">
+                <button type="submit" aria-label="Buscar">
+                    <img src="{% static 'img/search.png' %}" alt="">
+                </button>
+            </form>
+
+            <div class="header-icons">
+                <a href="#" aria-label="Histórico">
+                    <img src="{% static 'img/history.png' %}" alt="">
+                </a>
+                <a href="#" aria-label="Perfil">
+                    <img src="{% static 'img/user.png' %}" alt="">
+                </a>
+                <a href="#" aria-label="Sacola">
+                    <img src="{% static 'img/bag.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="categorias container" aria-label="Categorias">
+            <a href="#doces" class="categoria-card categoria-doces">
+                <span class="categoria-titulo">Doces</span>
+                <div class="categoria-icone">
+                    <img src="{% static 'img/icon-doces.png' %}" alt="Categoria Doces">
+                </div>
+            </a>
+
+            <a href="#salgados" class="categoria-card categoria-salgados">
+                <span class="categoria-titulo">Salgados</span>
+                <div class="categoria-icone">
+                    <img src="{% static 'img/icon-salgados.png' %}" alt="Categoria Salgados">
+                </div>
+            </a>
+
+            <a href="#gelados" class="categoria-card categoria-gelados">
+                <span class="categoria-titulo">Gelados</span>
+                <div class="categoria-icone">
+                    <img src="{% static 'img/icon-gelados.png' %}" alt="Categoria Gelados">
+                </div>
+            </a>
+
+            <a href="#variados" class="categoria-card categoria-variados">
+                <span class="categoria-titulo">Variados</span>
+                <div class="categoria-icone">
+                    <img src="{% static 'img/icon-variados.png' %}" alt="Categoria Variados">
+                </div>
+            </a>
+        </section>
+
+        <section class="banner container" aria-label="Promoção">
+            <div class="banner-content">
+                <div class="banner-badges">
+                    <span class="badge">PROMOÇÃO</span>
+                    <span class="badge">22/06 até 26/06</span>
+                </div>
+
+                <div class="banner-texto">
+                    <p class="banner-subtitulo">Açaí de</p>
+                    <h1>1 Litro por <strong>10,99</strong></h1>
+                    <a href="#gelados" class="banner-btn">QUERO</a>
+                </div>
+
+                <div class="banner-ilustracao">
+                    <img src="{% static 'img/banner-acai.png' %}" alt="Ilustração de açaí">
+                </div>
+            </div>
+        </section>
+
+        <section id="doces" class="secao secao-doces">
+            <div class="container">
+                <div class="secao-header">
+                    <h2>Doces</h2>
+                    <a href="#" class="seta-lateral" aria-label="Ver mais doces">
+                        <img src="{% static 'img/arrow-right.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="produtos-grid">
+                    {% if doces %}
+                        {% for doce in doces %}
+                        <article class="produto-card">
+                            <div class="produto-imagem">
+                                <img src="{% static doce.imagem %}" alt="{{ doce.nome }}">
+                            </div>
+                            <div class="produto-info">
+                                <h3>{{ doce.nome }}</h3>
+                                <p>{{ doce.descricao }}</p>
+                                <div class="produto-footer">
+                                    <span class="preco">{{ doce.preco }}</span>
+                                    <button class="btn-add" aria-label="Adicionar {{ doce.nome }}">+</button>
+                                </div>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        <p>Nenhum doce encontrado.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="salgados" class="secao secao-salgados">
+            <div class="container">
+                <div class="secao-header">
+                    <h2>Salgados</h2>
+                    <a href="#" class="seta-lateral" aria-label="Ver mais salgados">
+                        <img src="{% static 'img/arrow-right.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="produtos-grid">
+                    {% if salgados %}
+                        {% for salgado in salgados %}
+                        <article class="produto-card">
+                            <div class="produto-imagem">
+                                <img src="{% static salgado.imagem %}" alt="{{ salgado.nome }}">
+                            </div>
+                            <div class="produto-info">
+                                <h3>{{ salgado.nome }}</h3>
+                                <p>{{ salgado.descricao }}</p>
+                                <div class="produto-footer">
+                                    <span class="preco">{{ salgado.preco }}</span>
+                                    <button class="btn-add" aria-label="Adicionar {{ salgado.nome }}">+</button>
+                                </div>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        <p>Nenhum salgado encontrado.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="gelados" class="secao secao-gelados">
+            <div class="container">
+                <div class="secao-header">
+                    <h2>Gelados</h2>
+                    <a href="#" class="seta-lateral" aria-label="Ver mais gelados">
+                        <img src="{% static 'img/arrow-right.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="produtos-grid">
+                    {% if gelados %}
+                        {% for gelado in gelados %}
+                        <article class="produto-card">
+                            <div class="produto-imagem">
+                                <img src="{% static gelado.imagem %}" alt="{{ gelado.nome }}">
+                            </div>
+                            <div class="produto-info">
+                                <h3>{{ gelado.nome }}</h3>
+                                <p>{{ gelado.descricao }}</p>
+                                <div class="produto-footer">
+                                    <span class="preco">{{ gelado.preco }}</span>
+                                    <button class="btn-add" aria-label="Adicionar {{ gelado.nome }}">+</button>
+                                </div>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        <p>Nenhum gelado encontrado.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="variados" class="secao secao-variados">
+            <div class="container">
+                <div class="secao-header">
+                    <h2>Variados</h2>
+                    <a href="#" class="seta-lateral" aria-label="Ver mais variados">
+                        <img src="{% static 'img/arrow-right.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="produtos-grid">
+                    {% if variados %}
+                        {% for variado in variados %}
+                        <article class="produto-card">
+                            <div class="produto-imagem">
+                                <img src="{% static variado.imagem %}" alt="{{ variado.nome }}">
+                            </div>
+                            <div class="produto-info">
+                                <h3>{{ variado.nome }}</h3>
+                                <p>{{ variado.descricao }}</p>
+                                <div class="produto-footer">
+                                    <span class="preco">{{ variado.preco }}</span>
+                                    <button class="btn-add" aria-label="Adicionar {{ variado.nome }}">+</button>
+                                </div>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        <p>Nenhum item encontrado.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
