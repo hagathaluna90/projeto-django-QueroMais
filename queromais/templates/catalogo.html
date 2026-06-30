@@ -1,15 +1,27 @@
 {% load static %}
+
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lanchonete</title>
+
+    <title>Quero Mais</title>
+
     <link rel="stylesheet" href="{% static 'catalogo.css' %}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
     <header class="topo">
@@ -28,8 +40,11 @@
             </form>
 
             <div class="header-icons">
-                <a href="#" aria-label="Histórico">
-                    <img src="{% static 'img/history.png' %}" alt="">
+                <a href="#" aria-label="Horarios">
+                   <img src="{% static 'img/schedules.png' %}" alt="">
+                </a>
+                <a href="https://wa.me/5584981427496" target="_blank">
+                    <img src="{% static 'img/WHAT.png' %}" alt="">
                 </a>
                 <a href="{% url 'queromais:login' %}" aria-label="Perfil">
                     <img src="{% static 'img/user.png' %}" alt="">
@@ -79,6 +94,7 @@
                     <span class="badge">22/06 até 26/06</span>
                 </div>
 
+
                 <div class="banner-texto">
                     <p class="banner-subtitulo">Açaí de</p>
                     <h1>1 Litro por <strong>10,99</strong></h1>
@@ -95,31 +111,35 @@
             <div class="container">
                 <div class="secao-header">
                     <h2>Doces</h2>
+
+                </div>
+
+                <div class="produtos-container">
+                    <div class="produtos-grid">
+                        {% if doces %}
+                            {% for doce in doces %}
+                            <article class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="{% static doce.imagem %}" alt="{{ doce.nome }}">
+                                </div>
+                                <div class="produto-info">
+                                    <h3>{{ doce.nome }}</h3>
+                                    <p>{{ doce.descricao }}</p>
+                                    <div class="produto-footer">
+                                        <span class="preco">{{ doce.preco }}</span>
+                                        <button class="btn-add" aria-label="Adicionar {{ doce.nome }}">+</button>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        {% else %}
+                            <p>Nenhum doce encontrado.</p>
+                        {% endif %}
+                    </div>
+                    
                     <a href="#" class="seta-lateral" aria-label="Ver mais doces">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
-                </div>
-
-                <div class="produtos-grid">
-                    {% if doces %}
-                        {% for doce in doces %}
-                        <article class="produto-card">
-                            <div class="produto-imagem">
-                                <img src="{% static doce.imagem %}" alt="{{ doce.nome }}">
-                            </div>
-                            <div class="produto-info">
-                                <h3>{{ doce.nome }}</h3>
-                                <p>{{ doce.descricao }}</p>
-                                <div class="produto-footer">
-                                    <span class="preco">{{ doce.preco }}</span>
-                                    <button class="btn-add" aria-label="Adicionar {{ doce.nome }}">+</button>
-                                </div>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    {% else %}
-                        <p>Nenhum doce encontrado.</p>
-                    {% endif %}
                 </div>
             </div>
         </section>
@@ -128,31 +148,35 @@
             <div class="container">
                 <div class="secao-header">
                     <h2>Salgados</h2>
+
+                </div>
+
+                <div class="produtos-container">
+                    <div class="produtos-grid">
+                        {% if salgados %}
+                            {% for salgado in salgados %}
+                            <article class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="{% static salgado.imagem %}" alt="{{ salgado.nome }}">
+                                </div>
+                                <div class="produto-info">
+                                    <h3>{{ salgado.nome }}</h3>
+                                    <p>{{ salgado.descricao }}</p>
+                                    <div class="produto-footer">
+                                        <span class="preco">{{ salgado.preco }}</span>
+                                        <button class="btn-add" aria-label="Adicionar {{ salgado.nome }}">+</button>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        {% else %}
+                            <p>Nenhum salgado encontrado.</p>
+                        {% endif %}
+                    </div>
+
                     <a href="#" class="seta-lateral" aria-label="Ver mais salgados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
-                </div>
-
-                <div class="produtos-grid">
-                    {% if salgados %}
-                        {% for salgado in salgados %}
-                        <article class="produto-card">
-                            <div class="produto-imagem">
-                                <img src="{% static salgado.imagem %}" alt="{{ salgado.nome }}">
-                            </div>
-                            <div class="produto-info">
-                                <h3>{{ salgado.nome }}</h3>
-                                <p>{{ salgado.descricao }}</p>
-                                <div class="produto-footer">
-                                    <span class="preco">{{ salgado.preco }}</span>
-                                    <button class="btn-add" aria-label="Adicionar {{ salgado.nome }}">+</button>
-                                </div>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    {% else %}
-                        <p>Nenhum salgado encontrado.</p>
-                    {% endif %}
                 </div>
             </div>
         </section>
@@ -161,31 +185,35 @@
             <div class="container">
                 <div class="secao-header">
                     <h2>Gelados</h2>
+
+                </div>
+
+                <div class="produtos-container">
+                    <div class="produtos-grid">
+                        {% if gelados %}
+                            {% for gelado in gelados %}
+                            <article class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="{% static gelado.imagem %}" alt="{{ gelado.nome }}">
+                                </div>
+                                <div class="produto-info">
+                                    <h3>{{ gelado.nome }}</h3>
+                                    <p>{{ gelado.descricao }}</p>
+                                    <div class="produto-footer">
+                                        <span class="preco">{{ gelado.preco }}</span>
+                                        <button class="btn-add" aria-label="Adicionar {{ gelado.nome }}">+</button>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        {% else %}
+                            <p>Nenhum gelado encontrado.</p>
+                        {% endif %}
+                    </div>
+
                     <a href="#" class="seta-lateral" aria-label="Ver mais gelados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
-                </div>
-
-                <div class="produtos-grid">
-                    {% if gelados %}
-                        {% for gelado in gelados %}
-                        <article class="produto-card">
-                            <div class="produto-imagem">
-                                <img src="{% static gelado.imagem %}" alt="{{ gelado.nome }}">
-                            </div>
-                            <div class="produto-info">
-                                <h3>{{ gelado.nome }}</h3>
-                                <p>{{ gelado.descricao }}</p>
-                                <div class="produto-footer">
-                                    <span class="preco">{{ gelado.preco }}</span>
-                                    <button class="btn-add" aria-label="Adicionar {{ gelado.nome }}">+</button>
-                                </div>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    {% else %}
-                        <p>Nenhum gelado encontrado.</p>
-                    {% endif %}
                 </div>
             </div>
         </section>
@@ -194,31 +222,35 @@
             <div class="container">
                 <div class="secao-header">
                     <h2>Variados</h2>
+
+                </div>
+
+                <div class="produtos-container">
+                    <div class="produtos-grid">
+                        {% if variados %}
+                            {% for variado in variados %}
+                            <article class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="{% static variado.imagem %}" alt="{{ variado.nome }}">
+                                </div>
+                                <div class="produto-info">
+                                    <h3>{{ variado.nome }}</h3>
+                                    <p>{{ variado.descricao }}</p>
+                                    <div class="produto-footer">
+                                        <span class="preco">{{ variado.preco }}</span>
+                                        <button class="btn-add" aria-label="Adicionar {{ variado.nome }}">+</button>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        {% else %}
+                            <p>Nenhum item encontrado.</p>
+                        {% endif %}
+                    </div>
+
                     <a href="#" class="seta-lateral" aria-label="Ver mais variados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
-                </div>
-
-                <div class="produtos-grid">
-                    {% if variados %}
-                        {% for variado in variados %}
-                        <article class="produto-card">
-                            <div class="produto-imagem">
-                                <img src="{% static variado.imagem %}" alt="{{ variado.nome }}">
-                            </div>
-                            <div class="produto-info">
-                                <h3>{{ variado.nome }}</h3>
-                                <p>{{ variado.descricao }}</p>
-                                <div class="produto-footer">
-                                    <span class="preco">{{ variado.preco }}</span>
-                                    <button class="btn-add" aria-label="Adicionar {{ variado.nome }}">+</button>
-                                </div>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    {% else %}
-                        <p>Nenhum item encontrado.</p>
-                    {% endif %}
                 </div>
             </div>
         </section>
