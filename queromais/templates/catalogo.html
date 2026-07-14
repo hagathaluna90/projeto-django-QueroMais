@@ -1,11 +1,9 @@
 {% load static %}
-
+ 
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
+ 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+    
 </head>
-
+ 
 <body>
-
+ 
     <header class="topo">
         <div class="container header-content">
             <button class="menu-btn" aria-label="Abrir menu">
@@ -31,14 +29,18 @@
                 <span></span>
                 <span></span>
             </button>
-
+ 
+            <a href="{% url 'queromais:home' %}" class="logo" aria-label="Quero Mais">
+                <img src="{% static 'img/logo.svg' %}" alt="Quero Mais">
+            </a>
+ 
             <form class="search-box" action="#" method="get">
                 <input type="text" name="q" placeholder="encontre o seu lanche ideal" aria-label="Buscar produtos">
                 <button type="submit" aria-label="Buscar">
                     <img src="{% static 'img/lupa.png' %}" alt="">
                 </button>
             </form>
-
+ 
             <div class="header-icons">
                 <a href="#" aria-label="Horarios">
                    <img src="{% static 'img/schedules.png' %}" alt="">
@@ -55,7 +57,7 @@
             </div>
         </div>
     </header>
-
+ 
     <main>
         <section class="categorias container" aria-label="Categorias">
             <a href="#doces" class="categoria-card categoria-doces">
@@ -64,21 +66,21 @@
                     <img src="{% static 'img/icon-doces.png' %}" alt="Categoria Doces">
                 </div>
             </a>
-
+ 
             <a href="#salgados" class="categoria-card categoria-salgados">
                 <span class="categoria-titulo">Salgados</span>
                 <div class="categoria-icone">
                     <img src="{% static 'img/icon-salgados.png' %}" alt="Categoria Salgados">
                 </div>
             </a>
-
+ 
             <a href="#gelados" class="categoria-card categoria-gelados">
                 <span class="categoria-titulo">Gelados</span>
                 <div class="categoria-icone">
                     <img src="{% static 'img/icon-gelados.png' %}" alt="Categoria Gelados">
                 </div>
             </a>
-
+ 
             <a href="#variados" class="categoria-card categoria-variados">
                 <span class="categoria-titulo">Variados</span>
                 <div class="categoria-icone">
@@ -86,34 +88,34 @@
                 </div>
             </a>
         </section>
-
+ 
         <section class="banner container" aria-label="Promoção">
             <div class="banner-content">
                 <div class="banner-badges">
                     <span class="badge">PROMOÇÃO</span>
                     <span class="badge">22/06 até 26/06</span>
                 </div>
-
-
+ 
+ 
                 <div class="banner-texto">
                     <p class="banner-subtitulo">Açaí de</p>
                     <h1>1 Litro por <strong>10,99</strong></h1>
                     <a href="#gelados" class="banner-btn">QUERO</a>
                 </div>
-
+ 
                 <div class="banner-ilustracao">
-                    <img src="{% static 'img/banner-acai.png' %}" alt="Ilustração de açaí">
+                    <img src="{% static 'img/banner-acai.svg' %}" alt="Ilustração de açaí">
                 </div>
             </div>
         </section>
-
+ 
         <section id="doces" class="secao secao-doces">
             <div class="container">
                 <div class="secao-header">
                     <h2>Doces</h2>
-
+ 
                 </div>
-
+ 
                 <div class="produtos-container">
                     <div class="produtos-grid">
                         {% if doces %}
@@ -143,14 +145,14 @@
                 </div>
             </div>
         </section>
-
+ 
         <section id="salgados" class="secao secao-salgados">
             <div class="container">
                 <div class="secao-header">
                     <h2>Salgados</h2>
-
+ 
                 </div>
-
+ 
                 <div class="produtos-container">
                     <div class="produtos-grid">
                         {% if salgados %}
@@ -173,21 +175,21 @@
                             <p>Nenhum salgado encontrado.</p>
                         {% endif %}
                     </div>
-
+ 
                     <a href="#" class="seta-lateral" aria-label="Ver mais salgados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </section>
-
+ 
         <section id="gelados" class="secao secao-gelados">
             <div class="container">
                 <div class="secao-header">
                     <h2>Gelados</h2>
-
+ 
                 </div>
-
+ 
                 <div class="produtos-container">
                     <div class="produtos-grid">
                         {% if gelados %}
@@ -210,21 +212,21 @@
                             <p>Nenhum gelado encontrado.</p>
                         {% endif %}
                     </div>
-
+ 
                     <a href="#" class="seta-lateral" aria-label="Ver mais gelados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
                 </div>
             </div>
         </section>
-
+ 
         <section id="variados" class="secao secao-variados">
             <div class="container">
                 <div class="secao-header">
                     <h2>Variados</h2>
-
+ 
                 </div>
-
+ 
                 <div class="produtos-container">
                     <div class="produtos-grid">
                         {% if variados %}
@@ -247,7 +249,7 @@
                             <p>Nenhum item encontrado.</p>
                         {% endif %}
                     </div>
-
+ 
                     <a href="#" class="seta-lateral" aria-label="Ver mais variados">
                         <img src="{% static 'img/arrow-right.png' %}" alt="">
                     </a>
@@ -255,6 +257,7 @@
             </div>
         </section>
     </main>
-
+ 
 </body>
 </html>
+ 

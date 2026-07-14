@@ -4,19 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>Quero Mais</title>
     <link rel="stylesheet" href="{% static 'inicio.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="circulo roxo"></div>
-    <div class="circulo verde"></div>
-    <div class="circulo azul"></div>
-    <div class="circulo rosa"></div>
-    <div class="circulo laranja"></div>
-    <div class="circulo vermelho"></div>
-
+ 
+    <img src="{% static 'img/circulo-roxo.svg' %}" alt="" class="circulo roxo">
+    <img src="{% static 'img/circulo-verde.svg' %}" alt="" class="circulo verde">
+    <img src="{% static 'img/circulo-azul.svg' %}" alt="" class="circulo azul">
+    <img src="{% static 'img/circulo-rosa.svg' %}" alt="" class="circulo rosa">
+    <img src="{% static 'img/circulo-laranja.svg' %}" alt="" class="circulo laranja">
+    <img src="{% static 'img/circulo-vermelho.svg' %}" alt="" class="circulo vermelho">
+ 
     <header>
+        <a href="{% url 'queromais:home' %}" class="logo">
+            <img src="{% static 'img/logo.svg' %}" alt="Quero Mais">
+        </a>
+ 
         <nav>
             <ul>
                 <li><a href="#">Quem somos</a></li>
@@ -30,8 +37,10 @@
             </ul>
         </nav>
     </header>
-
+ 
     <section class="conteudo">
+        <img src="{% static 'img/simbolo-q.svg' %}" alt="" class="imagem-q">
+ 
         <div class="texto">
             <h1 class="titulo">
                 Oiê, Bem Vindos <br>
@@ -45,6 +54,7 @@
             </a>
         </div>
     </section>
-
+ 
 </body>
 </html>
+ 

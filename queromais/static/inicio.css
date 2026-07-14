@@ -1,52 +1,64 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
+ 
 
-/* BODY */
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
+ 
 
-/* =========================
-   MENU SUPERIOR
-========================== */
 header {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
     position: relative;
     z-index: 2;
 }
-
+ 
+.logo img {
+    height: 34px;
+    width: auto;
+    display: block;
+}
+ 
 nav ul {
     display: flex;
     align-items: center;
     gap: 40px;
     list-style: none;
 }
-
+ 
 nav a {
     text-decoration: none;
     color: #242424;
     font-size: 13px;
     transition: 0.3s;
 }
-
+ 
 nav a:hover {
     color: #e86992;
 }
+ 
+nav a:focus-visible,
+.btn-menu:focus-visible,
+.btn-acessar:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid #11b7d3;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+ 
 
-/* BOTÃO MENU */
 .btn-menu {
     background-color: #69c103;
     color: white;
@@ -54,27 +66,33 @@ nav a:hover {
     border-radius: 8px;
     transition: 0.3s;
 }
-
+ 
 .btn-menu:hover {
     background-color: #58a102;
 }
+ 
 
-/* =========================
-   CONTEÚDO PRINCIPAL
-========================== */
+
 .conteudo {
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 70px;
     padding-left: 90px;
     position: relative;
     z-index: 2;
 }
-
+ 
+.imagem-q {
+    width: 260px;
+    flex-shrink: 0;
+}
+ 
 .texto {
     max-width: 450px;
 }
-
+ 
 h1 {
     font-size: 58px;
     color: #242424;
@@ -83,14 +101,14 @@ h1 {
     text-align: left;
     letter-spacing: -1px;
 }
-
+ 
 p {
     font-size: 32px;
     color: #242424;
     margin-bottom: 35px;
 }
+ 
 
-/* BOTÃO ACESSAR */
 .btn-acessar {
     display: inline-block;
     text-decoration: none;
@@ -101,85 +119,70 @@ p {
     font-size: 22px;
     transition: 0.3s;
 }
-
+ 
 .btn-acessar:hover {
     background-color: #58a102;
     transform: translateY(-3px);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
+ 
 
-/* =========================
-   CÍRCULOS DECORATIVOS
-========================== */
 .circulo {
     position: absolute;
-    border-radius: 50%;
-    border: 12px solid;
-    opacity: 0.7;
+    width: auto;
+    pointer-events: none;
     /* ANIMAÇÃO */
     animation: flutuar 5s ease-in-out infinite;
 }
+ 
 
-/* CÍRCULO ROXO */
 .roxo {
     width: 280px;
-    height: 280px;
-    border-color: #a569e8;
     top: -90px;
     left: -90px;
 }
+ 
 
-/* CÍRCULO VERDE */
 .verde {
     width: 140px;
-    height: 140px;
-    border-color: #69c103;
     top: 30px;
     left: 220px;
     animation-delay: 1s;
 }
+ 
 
-/* CÍRCULO AZUL */
 .azul {
     width: 140px;
-    height: 140px;
-    border-color: #11b7d3;
     top: 70px;
     right: 40px;
     animation-delay: 2s;
 }
+ 
 
-/* CÍRCULO ROSA */
 .rosa {
     width: 220px;
-    height: 220px;
-    border-color: #e86992;
     top: 170px;
     right: 230px;
     animation-delay: 3s;
 }
+ 
 
-/* CÍRCULO LARANJA */
 .laranja {
     width: 320px;
-    height: 320px;
-    border-color: #fa9521;
     bottom: -100px;
     right: -100px;
     animation-delay: 1.5s;
 }
 
-/* CÍRCULO VERMELHO */
+
 .vermelho {
     width: 110px;
-    height: 110px;
-    border-color: #f42d1e;
     bottom: 30px;
     left: 30px;
     animation-delay: 2.5s;
 }
+ 
 
-/* ANIMAÇÃO FLUTUANDO */
 @keyframes flutuar {
     0% {
         transform: translateY(0px);
@@ -191,3 +194,77 @@ p {
         transform: translateY(0px);
     }
 }
+ 
+
+@media (prefers-reduced-motion: reduce) {
+    .circulo {
+        animation: none;
+    }
+}
+ 
+
+
+@media (max-width: 900px) {
+    nav ul {
+        gap: 20px;
+    }
+ 
+    nav a {
+        font-size: 12px;
+    }
+ 
+    .conteudo {
+        padding-left: 40px;
+        gap: 40px;
+    }
+ 
+    .imagem-q {
+        width: 180px;
+    }
+ 
+    h1 {
+        font-size: 42px;
+    }
+ 
+    p {
+        font-size: 24px;
+    }
+}
+ 
+@media (max-width: 640px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+ 
+    nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+ 
+    .conteudo {
+        height: auto;
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+ 
+    .imagem-q {
+        width: 140px;
+    }
+ 
+    .texto {
+        max-width: 100%;
+    }
+ 
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+ 
+    p {
+        font-size: 20px;
+    }
+}
+ 
