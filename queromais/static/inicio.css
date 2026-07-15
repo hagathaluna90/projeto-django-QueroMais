@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
- 
 
 body {
     width: 100%;
@@ -13,7 +12,7 @@ body {
     overflow-x: hidden;
     position: relative;
 }
- 
+
 
 header {
     width: 100%;
@@ -24,31 +23,31 @@ header {
     position: relative;
     z-index: 2;
 }
- 
+
 .logo img {
     height: 34px;
     width: auto;
     display: block;
 }
- 
+
 nav ul {
     display: flex;
     align-items: center;
     gap: 40px;
     list-style: none;
 }
- 
+
 nav a {
     text-decoration: none;
     color: #242424;
     font-size: 13px;
     transition: 0.3s;
 }
- 
+
 nav a:hover {
     color: #e86992;
 }
- 
+
 nav a:focus-visible,
 .btn-menu:focus-visible,
 .btn-acessar:focus-visible,
@@ -57,7 +56,7 @@ nav a:focus-visible,
     outline-offset: 3px;
     border-radius: 4px;
 }
- 
+
 
 .btn-menu {
     background-color: #69c103;
@@ -66,12 +65,10 @@ nav a:focus-visible,
     border-radius: 8px;
     transition: 0.3s;
 }
- 
+
 .btn-menu:hover {
     background-color: #58a102;
-}
- 
-
+ }
 
 .conteudo {
     min-height: calc(100vh - 80px);
@@ -83,16 +80,18 @@ nav a:focus-visible,
     position: relative;
     z-index: 2;
 }
- 
+
 .imagem-q {
-    width: 260px;
+    width: 420px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
 }
- 
+
 .texto {
     max-width: 450px;
 }
- 
+
 h1 {
     font-size: 58px;
     color: #242424;
@@ -101,13 +100,13 @@ h1 {
     text-align: left;
     letter-spacing: -1px;
 }
- 
+
 p {
     font-size: 32px;
     color: #242424;
     margin-bottom: 35px;
 }
- 
+
 
 .btn-acessar {
     display: inline-block;
@@ -119,152 +118,197 @@ p {
     font-size: 22px;
     transition: 0.3s;
 }
- 
+
 .btn-acessar:hover {
     background-color: #58a102;
     transform: translateY(-3px);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
- 
+
 
 .circulo {
     position: absolute;
-    width: auto;
+    border-radius: 50%;
+    border-style: solid;
+    background: transparent;
     pointer-events: none;
-    /* ANIMAÇÃO */
+    z-index: 0;
     animation: flutuar 5s ease-in-out infinite;
 }
- 
-
-.roxo {
-    width: 280px;
-    top: -90px;
-    left: -90px;
-}
- 
-
-.verde {
-    width: 140px;
-    top: 30px;
-    left: 220px;
-    animation-delay: 1s;
-}
- 
-
-.azul {
-    width: 140px;
-    top: 70px;
-    right: 40px;
-    animation-delay: 2s;
-}
- 
-
-.rosa {
-    width: 220px;
-    top: 170px;
-    right: 230px;
-    animation-delay: 3s;
-}
- 
-
-.laranja {
-    width: 320px;
-    bottom: -100px;
-    right: -100px;
-    animation-delay: 1.5s;
-}
-
 
 .vermelho {
-    width: 110px;
-    bottom: 30px;
-    left: 30px;
+    width: 70px;
+    height: 70px;
+    border-width: 6px;
+    border-color: #e63946;
+    top: -35px;
+    left: 210px;
+}
+
+
+.verde {
+    width: 130px;
+    height: 130px;
+    border-width: 8px;
+    border-color: #69c103;
+    top: 110px;
+    left: -35px;
+    animation-delay: 1s;
+}
+
+
+.azul {
+    width: 90px;
+    height: 90px;
+    border-width: 7px;
+    border-color: #11b7d3;
+    top: 110px;
+    right: 30px;
+    animation-delay: 2s;
+}
+
+
+.rosa {
+    width: 210px;
+    height: 210px;
+    border-width: 8px;
+    border-color: #e86992;
+    top: 480px;
+    left: 20px;
     animation-delay: 2.5s;
 }
- 
+
+.laranja {
+    width: 130px;
+    height: 130px;
+    border-width: 9px;
+    border-color: #f5923e;
+    top: 260px;
+    right: -55px;
+    animation-delay: 3s;
+}
+
+.ciano {
+    width: 55px;
+    height: 55px;
+    border-width: 6px;
+    border-color: #2ec4b6;
+    bottom: -25px;
+    left: 420px;
+    animation-delay: 1.8s;
+}
+
+
+.lilas {
+    width: 145px;
+    height: 145px;
+    border-width: 8px;
+    border-color: #b388eb;
+    top: 150px;
+    left: 330px;
+    animation-delay: 2.2s;
+}
+
+.magenta {
+    width: 85px;
+    height: 85px;
+    border-width: 6px;
+    border-color: #e85d9c;
+    top: -25px;
+    left: 1090px;
+    animation-delay: 2.8s;
+}
+
+
+.roxo {
+    width: 158px;
+    height: 158px;
+    border-width: 9px;
+    border-color: #a569e8;
+    top: 630px;
+    right: 210px;
+    animation-delay: 1.7s;
+}
+
 
 @keyframes flutuar {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
- 
+
 
 @media (prefers-reduced-motion: reduce) {
     .circulo {
         animation: none;
     }
-}
- 
+ }
 
 
 @media (max-width: 900px) {
+    .circulo {
+        display: none;
+    }
+
     nav ul {
         gap: 20px;
     }
- 
+
     nav a {
         font-size: 12px;
     }
- 
+
     .conteudo {
         padding-left: 40px;
         gap: 40px;
     }
- 
+
     .imagem-q {
-        width: 180px;
+        width: 280px;
     }
- 
+
     h1 {
         font-size: 42px;
     }
- 
+
     p {
         font-size: 24px;
     }
 }
- 
+
 @media (max-width: 640px) {
     header {
         flex-wrap: wrap;
         gap: 12px;
         padding: 16px 20px;
     }
- 
+
     nav ul {
         flex-wrap: wrap;
         gap: 14px;
     }
- 
+
     .conteudo {
         height: auto;
         flex-direction: column;
         padding: 40px 20px;
         text-align: center;
     }
- 
+
     .imagem-q {
-        width: 140px;
+        width: 210px;
     }
- 
+
     .texto {
         max-width: 100%;
     }
- 
+
     h1 {
         font-size: 30px;
         text-align: center;
     }
- 
+
     p {
         font-size: 20px;
     }
 }
- 
