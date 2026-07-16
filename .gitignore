@@ -1,4 +1,6 @@
 venv/
-__pycache__
-__init.__pycache__
-db.sqlite3
+.venv/
+__pycache__/
+*.pyc
+staticfiles/
+.vscode/
